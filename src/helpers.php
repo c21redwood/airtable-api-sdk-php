@@ -21,7 +21,7 @@ if (!function_exists('airtable_connect')) {
           throw new \Exception("Cannot create Airtable connection without API key (argument #2)");
         }
 
-        $connections[$baseId] = ( new $driver )
+        $connections[$baseId] = ( new $driver($baseId) )
           ->setBaseId($baseId)
           ->setApiKey($apiKey);
       }
