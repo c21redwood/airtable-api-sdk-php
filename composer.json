@@ -1,5 +1,5 @@
 {
-  "name": "collegeman/airtable-api-sdk-php",
+  "name": "c21redwood/airtable-api-sdk-php",
   "version": "1.0.0",
   "description": "",
   "keywords": [
@@ -8,7 +8,7 @@
     "sdk",
     "api"
   ],
-  "homepage": "http://github.com/collegeman/airtable-api-sdk-php",
+  "homepage": "http://github.com/c21redwood/airtable-api-sdk-php",
   "license": "MIT",
   "authors": [
     {
