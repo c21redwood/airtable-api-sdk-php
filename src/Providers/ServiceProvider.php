@@ -29,7 +29,7 @@ class ServiceProvider extends BaseServiceProvider {
       __DIR__.'/../config.php', 'airtable'
     );
 
-    $this->app->singleton('airtable', function() {
+    $this->app->singleton(Airtable::class, function() {
       return new Airtable($this->app);
     });
   }

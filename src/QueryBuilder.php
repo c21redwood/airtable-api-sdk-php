@@ -415,11 +415,11 @@ class QueryBuilder implements Arrayable {
   /**
    * @var \Airtable\Contracts\Driver
    */
-  protected $client;
+  protected $driver;
 
-  function __construct(Driver $client, $tableName)
+  function __construct(Driver $driver, $tableName)
   {
-    $this->client = $client;
+    $this->driver = $driver;
 
     $this->tableName = $tableName;
   }
@@ -511,6 +511,16 @@ class QueryBuilder implements Arrayable {
     $this->pageSize = $pageSize;
 
     return $this;
+  }
+
+  /**
+   * Find and return the Record in this table with the given ID.
+   * @param $id
+   * @return Record
+   */
+  function find($id)
+  {
+    return $this->driver->getRecord($this->getTableName(), $id);
   }
 
   /**
@@ -623,7 +633,7 @@ class QueryBuilder implements Arrayable {
 
   function get()
   {
-    return $this->client->listRecords($this);
+    return $this->driver->listRecords($this);
   }
 
   function first()
