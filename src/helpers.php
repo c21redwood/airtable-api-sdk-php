@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Arr;
+
 if (!function_exists('airtable_connect')) {
 
   /**
@@ -31,7 +33,7 @@ if (!function_exists('airtable_connect')) {
       if (empty($connections)) {
         throw new \Exception("There are no Airtable connections");
       }
-      return array_first($connections);
+      return Arr::first($connections);
     }
   }
 
